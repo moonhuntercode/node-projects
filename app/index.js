@@ -5,7 +5,7 @@
 //dependencies
 let http = require("http");
 let { StringDecoder } = require("node:string_decoder");
-const url = require("node:url");
+const urls = require("node:url");
 const { hostname } = require("os");
 // el server tiene que
 // responder todas las
@@ -34,7 +34,9 @@ let server = http.createServer(function (req, res) {
   console.log("--------");
 
   // get the headers as an object
-  console.log(req.headers);
+  let headers = req.headers;
+
+  console.log(headers);
   console.log("--------");
 
   // get the payload , if any
@@ -52,7 +54,7 @@ let server = http.createServer(function (req, res) {
 
   // enviar la respuesta ||
   // send the response
-  res.end("Hola mundaso");
+  res.end("Hola caos!");
   console.log("--------");
   console.log(`este es el path:${path}`);
   // console.log(myUrl);
@@ -66,3 +68,22 @@ const PORT = 3000;
 server.listen(PORT, function () {
   console.log(` the server is listening on port: ${PORT}`);
 });
+
+// Define the handlers
+let handlers = {};
+
+// sample handler
+handlers.sample = function (data, callback) {
+  // Callback a http status code , and a payload object
+  callback(406, { name: "sample handler" });
+};
+// not found handler
+handlers.notFound = function (data, callback) {
+  callback(404);
+};
+// Define the request router
+let router = {
+  sample: handlers.sample,
+};
+
+//
