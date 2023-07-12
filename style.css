@@ -1,0 +1,36 @@
+:root {
+  --cien-porciento: 100%;
+  --size-container: 300px;
+}
+body,
+html {
+  width: var(--cien-porciento);
+  height: var(--cien-porciento);
+  display: flex;
+  flex-flow: column wrap;
+  place-content: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: var(--size-container);
+  height: var(--size-container);
+  background-color: #7632ff;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+p {
+  color: #fff;
+  width: 100%;
+  font-size: 7vw;
+}
+.children:nth-child(1) {
+  background-color: rgb(0, 112, 112);
+}
+button {
+  width: var(--cien-porciento);
+}
