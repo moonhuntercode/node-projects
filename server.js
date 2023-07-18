@@ -5,7 +5,7 @@ console.log(path);
 //settings
 app.set("port", process.env.PORT || 3000);
 // static files
-app.use(express.static(""));
+app.use(express.static(path.join(__dirname, "public")));
 // start the server
 app.listen(app.get("port"), () => {
   console.log(`server on http://localhost:${app.get("port")}`);
