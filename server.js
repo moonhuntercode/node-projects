@@ -3,7 +3,7 @@ const app = express();
 const path = require("node:path");
 //settings
 app.set("port", process.env.PORT || 3000);
-// static files
+// serving static files
 app.use(express.static(path.join(__dirname, "public")));
 // start the server
 const server = app.listen(app.get("port"), () => {

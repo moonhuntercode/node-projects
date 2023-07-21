@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    <h1>cambio</h1>
     <div id="chat_container">
       <div id="chat_window">
         <div id="output"></div>
@@ -16,11 +15,14 @@
       <form action="#">
         <label for="username"> username </label>
         <input type="text" id="username" />
+        <br />
         <label for="message"> message </label>
         <input type="text" id="message" />
+        <br />
         <button type="button" id="send">send</button>
       </form>
     </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="./chat.js"></script>
   </body>
