@@ -6,8 +6,8 @@
   "directories": {
     "example": "examples"
   },
+  "type": "module",
   "scripts": {
-
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
@@ -16,13 +16,15 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "socket.io": "^4.7.1"
+    "get-age": "^1.0.1",
+    "socket.io": "^4.7.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
   "engines": {
-    "npm":"9.5.1",
+    "npm": "9.5.1",
     "node": ">=18.0.0"
   },
   "engineStrict": true
