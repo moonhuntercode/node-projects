@@ -1,18 +1,20 @@
-const express = require("express");
+import express, { static as static_ } from "express";
 const app = express();
-const path = require("node:path");
+import { join } from "node:path";
+// websockets
+
+import { Server } from "socket.io";
+
 //settings
 app.set("port", process.env.PORT || 3000);
 // serving static files
-app.use(express.static(path.join(__dirname, "public")));
+app.use(static_(join(import.meta.dirname, "public")));
 // start the server
 const server = app.listen(app.get("port"), () => {
   console.log(`server on http://localhost:${app.get("port")}`);
 });
 
-// websockets
-const SocketIo = require("socket.io");
-const io = SocketIo(server);
+const io = new Server(server);
 // console.log(path);
 io.on("connection", (socket) => {
   console.log("new connection", socket.id);
